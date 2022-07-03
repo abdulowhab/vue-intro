@@ -8,8 +8,10 @@ const app = Vue.createApp({
             alt: "Green Socks Image",
             url: "https://abdulowhab.netlify.app",
             class: "isActive",
-            inventory: 100,
+            inventory: 0,
             details: ["50% cotton", "30% wool", "20% polyester"],
+
+            inStock: false,
 
             variants: [
                 {

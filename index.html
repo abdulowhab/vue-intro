@@ -18,7 +18,7 @@
         <p> {{desc}} </p>
         <!-- Image and Alt Attribute Binding -->
         <div class="product-image">
-        <img v-bind:src="image" :alt="alt">
+        <img :class = "[!inStock ? out-of-stock-img : '']" v-bind:src="image" :alt="alt">
         </div>
         <div class="product-info">
         <!-- Class and Href Attribute Binding  -->
@@ -36,10 +36,10 @@
           <!-- <li v-for = "size in sizes"> {{size}} </li> -->
         </ul>
 
-        <div v-for = "variant in variants" :key = "variant.id" @mouseover = "updateImage(variant.image)">{{variant.color}}</div>
+        <div :style = " {backgroundColor: variant.color} " class="color-circle" v-for = "variant in variants" :key = "variant.id" @mouseover = "updateImage(variant.image)"></div>
 
-        <button v-on:click ="addToCart" class="button">Add to Cart</button>
-        <button v-on:click = "decreaseCart" class="button">Decrease</button>
+        <button :class = "{disabledButton : inventory ==0}" :disabled = "inventory == 0" v-on:click ="addToCart" class="button">Add to Cart</button>
+        <button :class = "{disabledButton : inventory ==0}" :disabled = "inventory == 0" v-on:click = "decreaseCart" class="button">Decrease</button>
 
 
       </div>
