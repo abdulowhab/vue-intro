@@ -12,6 +12,12 @@
     <div id="app">
       <h1>{{product}}</h1>
       <p> {{desc}} </p>
+      <!-- Image and Alt Attribute Binding -->
+      <img v-bind:src="image" :alt="alt">
+      <br>
+      <!-- Class and Href Attribute Binding  -->
+      <a :class = "isActive" :href="url"><button>Portfolio</button></a>
+
     </div>
 
     <!-- Import Js -->
