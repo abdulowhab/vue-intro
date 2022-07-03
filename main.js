@@ -6,7 +6,10 @@ const app = Vue.createApp({
             image: "./assets/images/socks_green.jpg",
             alt: "Green Socks Image",
             url: "https://abdulowhab.netlify.app",
-            class: "isActive"
+            class: "isActive",
+            inventory: 100,
+
+
 
 
             
