@@ -10,6 +10,8 @@
   </head>
   <body>
     <div id="app">
+      <div class="nav-bar"></div>
+      <div class="cart">Cart ({{cart}})</div>
       <div class="product-display">
         <div class="product-container">
         <h1>{{product}}</h1>
@@ -31,10 +33,13 @@
         </ul>
 
         <ul>
-          <li v-for = "size in sizes"> {{size}} </li>
+          <!-- <li v-for = "size in sizes"> {{size}} </li> -->
         </ul>
 
-        <div v-for = "variant in variants" :key = "variant.id">{{variant.color}}</div>
+        <div v-for = "variant in variants" :key = "variant.id" @mouseover = "updateImage(variant.image)">{{variant.color}}</div>
+
+        <button v-on:click ="addToCart" class="button">Add to Cart</button>
+        <button v-on:click = "decreaseCart" class="button">Decrease</button>
 
 
       </div>

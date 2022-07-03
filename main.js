@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
+            cart: 0,
             product: "Socks",
             desc: "Etymology. The modern English word sock is derived from the Old English word socc, meaning light slipper. This comes from the Latin soccus, a term to describe a light, low-heeled shoe worn by Roman comic actors, and deriving from the Ancient Greek word sykchos",
             image: "./assets/images/socks_green.jpg",
@@ -12,10 +13,10 @@ const app = Vue.createApp({
 
             variants: [
                 {
-                    id: 01, color: "green"
+                    id: 01, color: "green", image: "./assets/images/socks_green.jpg"
                 },
                 {
-                    id: 02, color: "blue"
+                    id: 02, color: "blue", image: "./assets/images/socks_blue.jpg"
                 }
             ],
 
@@ -25,6 +26,19 @@ const app = Vue.createApp({
 
 
             
+        }
+
+        
+    },
+    methods: {
+        addToCart(){
+            this.cart += 1
+        },
+        decreaseCart(){
+            this.cart -= 1
+        },
+        updateImage(variantImage){
+            this.image = variantImage;
         }
     },
 })
